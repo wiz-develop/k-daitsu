@@ -1,0 +1,11 @@
+.DS_Store
+*.log
+*.sql
+*.sql.gz
+*.wpress
+*.zip
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/ai1wm-backups/
+theme/rocked/images/movie.mp4

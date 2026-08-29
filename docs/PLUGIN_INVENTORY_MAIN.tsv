@@ -1,0 +1,50 @@
+status	plugin_file	version	name	requires_wp	tested_wp	requires_php	update_uri
+inactive	add-to-any/add-to-any.php	1.7.36	"AddToAny Share Buttons"
+active	advanced-custom-fields/acf.php	5.9.6	"Advanced Custom Fields"
+inactive	advanced-wp-reset/advanced-wp-reset.php	1.0.1	"Advanced WordPress Reset"
+active	akismet/akismet.php	4.1.9	"Akismet Anti-Spam"
+active	all-in-one-seo-pack/all_in_one_seo_pack.php	4.1.1.2	"All in One SEO"
+active	all-in-one-wp-migration-multisite-extension/all-in-one-wp-migration-multisite-extension.php	3.95	"All-in-One WP Migration Multisite Extension"
+inactive	all-in-one-wp-migration/all-in-one-wp-migration.php	7.25	"All-in-One WP Migration"
+inactive	all-in-one-wp-security-and-firewall/wp-security.php	4.3.8.3	"All In One WP Security"
+inactive	autoptimize/autoptimize.php	2.4.4	Autoptimize
+active	black-studio-tinymce-widget/black-studio-tinymce-widget.php	2.6.9	"Black Studio TinyMCE Widget"	3.1	5.6
+inactive	breadcrumb-navxt/breadcrumb-navxt.php	6.2.1	"Breadcrumb NavXT"
+active	classic-editor/classic-editor.php	1.6	"Classic Editor"	4.9		5.2.4
+active	contact-form-7/wp-contact-form-7.php	5.5.5	"Contact Form 7"
+active	custom-field-suite/cfs.php	2.6	"Custom Field Suite"
+active	custom-post-type-ui/custom-post-type-ui.php	1.9.1	"Custom Post Type UI"
+inactive	disable-google-fonts/disable-google-fonts.php	2.0	"Disable Google Fonts"
+active	duplicate-post/duplicate-post.php	3.2.2	"Duplicate Post"
+inactive	hello.php	1.6	"Hello Dolly"
+active	image-widget/image-widget.php	4.4.7	"Image Widget"
+inactive	imagemagick-engine/imagemagick-engine.php	1.5.4	"ImageMagick Engine"
+active	instagram-feed/instagram-feed.php	6.7.1	"Smash Balloon Instagram Feed"
+active	jquery-smooth-scroll/jquery-smooth-scroll.php	1.4.5	"jQuery Smooth Scroll"
+inactive	limit-login-attempts-reloaded/limit-login-attempts-reloaded.php	2.22.1	"Limit Login Attempts Reloaded"
+inactive	limit-login-attempts/limit-login-attempts.php	1.7.1	"Limit Login Attempts"
+inactive	ml-slider/ml-slider.php	3.10.3	MetaSlider
+inactive	mw-wp-form/mw-wp-form.php	5.0.3	"MW WP Form"			7.4
+active	pdf-embedder/pdf_embedder.php	4.6.2	"PDF Embedder"
+inactive	protect-uploads/protect-uploads.php	0.2	"Protect Uploads"
+inactive	remove-query-strings-from-static-resources/remove-query-strings.php	1.4	"Remove Query Strings From Static Resources"
+inactive	sakura-rs-wp-ssl/sakura-rs-ssl.php	1.4.0	"SAKURA RS WP SSL"
+active	shortcodes-ultimate/shortcodes-ultimate.php	5.10.0	"Shortcodes Ultimate"	4.6	5.7	5.3
+active	siteguard/siteguard.php	1.6.0	"SiteGuard WP Plugin"
+active	siteorigin-panels/siteorigin-panels.php	2.12.2	"Page Builder by SiteOrigin"
+inactive	smart-slider-3/smart-slider-3.php	3.3.11	"Smart Slider 3"
+active	so-widgets-bundle/so-widgets-bundle.php	1.19.0	"SiteOrigin Widgets Bundle"
+active	tablepress-responsive-tables/tablepress-responsive-tables.php	1.1	"TablePress Extension: Responsive Tables"
+active	tablepress/tablepress.php	1.13	TablePress	5.6		5.6.20
+inactive	themeisle-companion/themeisle-companion.php	2.7.3	"Orbit Fox Companion"
+active	tinymce-advanced/tinymce-advanced.php	5.6.0	"Advanced Editor Tools (previously TinyMCE Advanced)"	5.6	5.7	5.6
+inactive	ts-webfonts-for-sakura/ts-webfonts-for-sakura.php	2.0.0	"TS Webfonts for SAKURA RS"
+inactive	whats-new-genarator/whats-new-generator.php	2.0.2	"What's New Generator"
+inactive	wordpress-importer/wordpress-importer.php	0.7	"WordPress Importer"
+active	wp-multibyte-patch/wp-multibyte-patch.php	2.9	"WP Multibyte Patch"
+active	wp-pagenavi/wp-pagenavi.php	2.93.4	WP-PageNavi
+active	wp-posts-carousel/wp-posts-carousel.php	1.3.7	"Wp Posts Carousel"
+inactive	wpforms-lite/wpforms.php	1.5.0.4	"WPForms Lite"
+inactive	wpfront-scroll-top/wpfront-scroll-top.php	2.0.1	"WPFront Scroll Top"
+inactive	wptouch/wptouch.php	4.3.34	"WPtouch Mobile Plugin"
+active	wysiwyg-widgets/wysiwyg-widgets.php	2.3.9	"Widget Content Blocks"
