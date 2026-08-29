@@ -1,0 +1,8 @@
+diff --git a/wptouch/wptouch.php b/wptouch/wptouch.php
+--- a/wptouch/wptouch.php
++++ b/wptouch/wptouch.php
+@@ -97,3 +97,3 @@
+ // Main WPtouch Pro activation hook
+-add_action( 'plugins_loaded', 'wptouch_create_four_object' );
++add_action( 'init', 'wptouch_create_four_object', 0 );
+ add_action( 'admin_init', 'wptouch_disable_self' );

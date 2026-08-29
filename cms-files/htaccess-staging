@@ -4,13 +4,14 @@ Options +SymLinksIfOwnerMatch
 Header always set X-Robots-Tag "noindex, nofollow, noarchive"
 </IfModule>
 
-<FilesMatch "^(wp-config\.php|\.env|composer\.(json|lock))$">
+<FilesMatch "^(wp-config\.php|debug\.log|error_log|\.env|composer\.(json|lock))$">
 Require all denied
 </FilesMatch>
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /cms/
+RewriteRule ^wp-content/(debug\.log|error_log)$ - [R=404,L,NC]
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

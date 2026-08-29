@@ -12,3 +12,12 @@
 10. Record final versions, changed files, remaining risk, production steps, and rollback steps on `test`.
 
 Production is read-only until staging approval is explicitly given.
+
+## Completion status
+
+Steps 1 through 8 are complete. Automated public, mobile-user-agent, admin,
+REST, WordPress.org, loopback, Cron, CFS read/save, form-submission, mailer,
+asset, and error-log QA are complete. Chrome visual and interaction QA remains
+pending because the ChatGPT browser extension is not installed in Google
+Chrome. Real mailbox receipt of the two rerouted QA messages also requires a
+recipient-side check. See `STAGING_FINAL_REPORT.md`.

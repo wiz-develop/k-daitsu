@@ -6,11 +6,8 @@ Header always set X-Robots-Tag "noindex, nofollow, noarchive"
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteCond %{HTTPS} !=on
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-
 RewriteBase /
+RewriteRule ^wiz-[A-Za-z0-9._-]+\.php$ - [R=404,L,NC]
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

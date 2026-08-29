@@ -37,14 +37,15 @@ prevent PHP 7.4 deprecation output and PHP 8 fatal errors.
 
 ## Runtime gate
 
-Production reports PHP 7.4.33. Staging still reported PHP 8.5.10 on 2026-08-29.
-No WordPress or database deployment may begin until staging reports PHP 7.4.x.
+Production reports PHP 7.4.33. Staging was changed from PHP 8.5.10 and verified
+as PHP 7.4.33 before the database or application was deployed. The runtime gate
+is complete.
 
-The current official Japanese WordPress candidate is 7.1, whose minimum PHP version is
+The deployed official Japanese WordPress version is 7.1, whose minimum PHP version is
 7.4. The verified Japanese package SHA-256 is
 `1cc95563b5005543c045e9a33d033dafb05cf4112795b378d815da83876daede`;
 all 4,009 files matched the official WordPress.org MD5 manifest. Core and plugin updates
-must be performed one at a time after the runtime gate passes.
+were performed one at a time after the runtime gate passed.
 
 ## Forms and email
 

@@ -18,7 +18,7 @@ Official WordPress.org metadata checked: 2026-08-29
 | Orbit Fox | 2.7.3 | 3.0.9 | 7.4 | Update and QA Zerif widgets |
 | What's New Generator | 2.0.2 | 2.0.3-wiz.1 | 7.4 | Apply recorded local hardening patch |
 | WPFront Scroll Top | 2.0.1 | 3.0.1 | 7.2 | Update and QA desktop/mobile control |
-| WPtouch | 4.3.34 | 4.3.62 | not declared | Update and perform focused mobile QA |
+| WPtouch | 4.3.34 | 4.3.62 + compatibility patch | not declared | Delay initialization to `init` and perform focused mobile QA |
 
 ## Remove after usage verification
 

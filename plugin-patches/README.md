@@ -31,3 +31,16 @@ The site uses `[showwhatsnew]`, so this abandoned plugin cannot simply be
 removed. The patch preserves its markup and options while adding current PHP
 compatibility, `manage_options` authorization, strict settings validation,
 published-post filtering, and escaped output.
+
+## WPtouch 4.3.62 WordPress 7.1 compatibility
+
+- Upstream main-file SHA-256: `f22de02370dcbad96ade8fd392a48384e98a2d8ba21c50cf11a555534e2e9335`
+- Patched main-file SHA-256: `fee87b78e7afc94e6715fdb0593c6a207696b618387594ac98123e5caada2637`
+- Patch: `wptouch-4.3.62-wordpress-7.1.patch`
+- Apply check: `git apply --check --ignore-space-change wptouch-4.3.62-wordpress-7.1.patch`
+
+WordPress 7.1 reports a notice when WPtouch initializes its translation domain
+from `plugins_loaded`. The patch moves only the main initialization callback to
+the start of `init`, before WPtouch registers its later `init` callbacks.
+`--ignore-space-change` is required because the upstream file uses CRLF line
+endings while the single replacement line is stored with LF.
