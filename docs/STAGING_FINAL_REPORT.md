@@ -115,6 +115,8 @@ recorded in `PLUGIN_UPDATE_CANDIDATES.md`.
   draft, postmeta, and CFS rows. The total remained exactly 625.
 - After the final public/admin crawl, `wp-content/debug.log` was not regenerated.
   No public or admin page contained Fatal, Warning, Deprecated, or Notice output.
+- Deployment debugging was closed after QA: `WP_DEBUG`, `WP_DEBUG_LOG`, and
+  `WP_DEBUG_DISPLAY` are all disabled in the untracked staging configuration.
 - `wp-config.php` returns 403; deleted helper URLs return 404; the only MU plugin
   left on the server is `wiz-staging-guard.php`.
 - The root response is 200 with
