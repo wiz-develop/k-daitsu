@@ -36,6 +36,10 @@ Completed: 2026-08-30 JST
   legacy entity-encoded attributes, and removed arbitrary PHP-file inclusion.
 - Replaced the Rocked contact widget's PHP 4-style constructor with
   `__construct()`.
+- Removed the redundant `Content-Type:text/plain;` line from Contact Form 7
+  form 5's additional mail headers. The hosting WAF treated that legacy value
+  as an invalid POST parameter and blocked every admin save with HTTP 403;
+  plain text is already Contact Form 7's default.
 - Removed web-accessible old plugin rollback copies after successful QA. The
   verified local pre-update backups remain available.
 
@@ -66,6 +70,10 @@ exceptions to unqualified latest are:
   expected validation errors. Valid QA input reached the mail stage, where the
   staging guard blocked the single outbound mail call. No customer mail was
   sent and no PHP error was logged.
+- Contact Form 7 admin save: an unchanged authenticated save returned the
+  expected HTTP 302 redirect with `message=saved`. The WAF remains enabled and
+  still blocks a diagnostic request containing the removed legacy header.
+  The recipient remained `info@k-daitsu.co.jp` for the administrator to edit.
 - CFS: 7 groups, 104 fields, and saved values for 76 fields were read. A real
   text field was saved and read back through `CFS()` inside a database
   transaction, then rolled back to the original value. Final run succeeded
@@ -89,6 +97,8 @@ Private backups are outside Git under
   `fd75dda1b47ccade63a7c571f38be648e41e54c32c2f0c45a2949415b235ec79`
 - Final staging DB: 41 tables, 44,874,667 bytes, gzip SHA-256
   `f78d797ffa78921f919361c02f6c6b6ee408c2b52880df7afc85122df601e6d2`
+- Pre-CF7-WAF-fix staging DB: 45,212,649 bytes, gzip SHA-256
+  `a5271125d414bd227aee387a6ba909c45bba70af8af59e7e099f144c2e5b93c6`
 - Superseded remote staging tree: `/k-daitsu-rollback-20260830`
 
 ## Remaining risk
