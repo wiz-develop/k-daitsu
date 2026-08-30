@@ -1,5 +1,12 @@
 # Staging final report
 
+> **Superseded on 2026-08-30:** the supplied FTP/DB source was later confirmed
+> to be the pre-renewal `k-daitsu.3d-showcase.net` site, not the requested
+> Basic-authenticated `k-daitsu2.3d-showcase.net` site. This report is retained
+> only as a record of the completed compatibility work. The current staging
+> build is not an approval or production-deployment candidate. See
+> `SOURCE_CORRECTION.md`.
+
 Completed: 2026-08-30 JST
 
 ## Scope and environment
