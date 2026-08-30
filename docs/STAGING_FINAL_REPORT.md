@@ -19,7 +19,8 @@ Completed: 2026-08-30 JST
 - Customized Rocked 1.13 theme
 - 23 active runtime plugins
 - Noindex/nofollow/noarchive response header and robots policy
-- Outbound WordPress mail blocked by `wiz-staging-guard.php`
+- Outbound WordPress mail allowed after the administrator changed the staging
+  recipient; `wiz-staging-guard.php` remains installed as a configuration gate
 - `WP_DEBUG`, `WP_DEBUG_LOG`, and display errors disabled after QA
 
 ## Changes
@@ -67,9 +68,11 @@ exceptions to unqualified latest are:
   6 future pending actions, and 0 overdue pending actions. The minute queue can
   transiently appear as a few seconds late on a low-traffic staging site.
 - Contact Form 7: form 5 renders on `/contact/`; empty input returned seven
-  expected validation errors. Valid QA input reached the mail stage, where the
-  staging guard blocked the single outbound mail call. No customer mail was
-  sent and no PHP error was logged.
+  expected validation errors. During initial QA, valid input reached the mail
+  stage and the then-active staging guard blocked the single outbound mail
+  call. After the administrator changed the recipient, the mail gate was
+  enabled with `WIZ_STAGING_ALLOW_MAIL=true`; no automatic external delivery
+  test was sent.
 - Contact Form 7 admin save: an unchanged authenticated save returned the
   expected HTTP 302 redirect with `message=saved`. The WAF remains enabled and
   still blocks a diagnostic request containing the removed legacy header.
@@ -99,6 +102,8 @@ Private backups are outside Git under
   `f78d797ffa78921f919361c02f6c6b6ee408c2b52880df7afc85122df601e6d2`
 - Pre-CF7-WAF-fix staging DB: 45,212,649 bytes, gzip SHA-256
   `a5271125d414bd227aee387a6ba909c45bba70af8af59e7e099f144c2e5b93c6`
+- Pre-mail-enable `wp-config.php`: SHA-256
+  `14a675db981acd3dd180c854fb1a37a611e580fe217bd331010360fca18289e4`
 - Superseded remote staging tree: `/k-daitsu-rollback-20260830`
 
 ## Remaining risk
@@ -108,8 +113,10 @@ but the ChatGPT browser extension is not installed, so automated control could
 not be attached. The HTML/mobile crawl, assets, forms, and admin screens passed,
 but sliders and final responsive appearance still need a manual Chrome check.
 
-Actual external email delivery was intentionally not tested. Staging prevents
-mail to production recipients by design.
+Actual external email delivery was intentionally not tested automatically.
+Staging now permits WordPress mail because the administrator confirmed the
+recipient was changed; a manual form submission is still required to confirm
+delivery to that mailbox.
 
 ## Rollback
 
@@ -118,7 +125,8 @@ mail to production recipients by design.
 3. Rename `/k-daitsu-rollback-20260830` back to `/k-daitsu`, or restore the
    verified local staging-pre-copy files ZIP.
 4. Drop the current 41 staging tables and import the superseded staging DB.
-5. Verify the target URL, noindex/mail guard, homepage, login, and logs.
+5. Verify the target URL, noindex/mail configuration, homepage, login, and
+   logs.
 
 For a rollback to the copied production baseline instead of the superseded
 pre-renewal site, restore the production-copy files/DB backup and reapply only
