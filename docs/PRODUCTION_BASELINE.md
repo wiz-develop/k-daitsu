@@ -52,8 +52,9 @@ out the repository cannot apply production redirects by accident.
 
 ## Baseline observations
 
-- Production and the designated copy source are not the same site build.
-  Production uses `rocked`; the copy source uses `zerif-lite`.
-- Production has newer and additional plugins compared with the copy source.
-- Production must not be overwritten with the staging first-view assets or
-  database unless separately approved after staging QA.
+- A fresh deploy-relevant production snapshot on 2026-08-30 was byte-identical
+  to this baseline for all 18,099 non-migration-archive files.
+- The initially supplied 3D Showcase source was a different pre-renewal build;
+  it was superseded after staging was rebuilt from this production baseline.
+- Production remained read-only and must not receive the staging database or
+  files without separate approval and a fresh production backup.

@@ -1,29 +1,35 @@
-# Plugin update candidates
+# Plugin update decisions
 
-Official WordPress.org metadata checked: 2026-08-29
+Checked against WordPress.org metadata on 2026-08-30. The staging runtime is
+PHP 7.4.33 and WordPress 7.1.
 
-| Plugin | Source | Candidate | PHP minimum | Treatment |
-| --- | ---: | ---: | ---: | --- |
-| AddToAny | 1.7.36 | 1.8.18 | 5.6 | Update and QA sharing buttons |
-| Advanced Custom Fields | 5.8.7 | 6.8.9 | 7.4 | Update and QA `p_navi` fields/templates |
-| All in One SEO | 2.12.1 | 5.0.1.1 | 7.2 | High-risk major update; verify metadata and sitemap |
-| Breadcrumb NavXT | 6.2.1 | 7.5.1 | 7.0 | Update and QA breadcrumb output |
-| Classic Editor | 1.5 | 1.7.0 | 5.2.4 | Update and QA post/page editing |
-| Contact Form 7 | 5.1.1 | 6.1.7 | 7.4 | Update and QA form ID 879 and mail |
-| Custom Field Suite | 2.5.12 | 2.6.8-wiz.1 | 7.4 | Retain CFS and apply recorded compatibility patch |
-| Custom Post Type UI | 1.7.2 | 1.19.3 | 7.4 | Update and QA `p_navi` registration |
-| Duplicate Post | 3.2.2 | 4.7 | 7.4 | Update and QA editor action |
-| MetaSlider | 3.10.3 | 3.111.2 | 7.0 | Update and QA all slideshows |
-| Smart Slider 3 | 3.3.11 | 3.5.1.39 | 7.0 | Update and QA slider data/rendering |
-| Orbit Fox | 2.7.3 | 3.0.9 | 7.4 | Update and QA Zerif widgets |
-| What's New Generator | 2.0.2 | 2.0.3-wiz.1 | 7.4 | Apply recorded local hardening patch |
-| WPFront Scroll Top | 2.0.1 | 3.0.1 | 7.2 | Update and QA desktop/mobile control |
-| WPtouch | 4.3.34 | 4.3.62 + compatibility patch | not declared | Delay initialization to `init` and perform focused mobile QA |
+| Plugin | Copied version | Staging version | Decision |
+| --- | ---: | ---: | --- |
+| Advanced Custom Fields | 5.9.6 | 6.8.9 | Latest PHP 7.4-compatible release |
+| Akismet | 4.1.9 | 5.7.2 | Latest |
+| All in One SEO | 4.1.1.2 | 5.0.1.1 | Latest |
+| Black Studio TinyMCE Widget | 2.6.9 | 2.7.4 | Latest |
+| Classic Editor | 1.6 | 1.7.0 | Latest |
+| Contact Form 7 | 5.5.5 | 6.1.7 | Latest PHP 7.4-compatible release |
+| Custom Field Suite | 2.6 | 2.6.8-wiz.2 | Retain CFS and apply recorded compatibility patch |
+| Custom Post Type UI | 1.9.1 | 1.19.3 | Latest PHP 7.4-compatible release |
+| Duplicate Post | 3.2.2 | 4.7 | Latest PHP 7.4-compatible release |
+| Image Widget | 4.4.7 | 4.4.12 | Latest |
+| Smash Balloon Instagram Feed | 6.7.1 | 6.12.0 | Latest PHP 7.4-compatible release |
+| jQuery Smooth Scroll | 1.4.5 | 1.5.1 | Latest |
+| PDF Embedder | 4.6.2 | 5.0.2 | Latest PHP 7.4-compatible release |
+| Shortcodes Ultimate | 5.10.0 | 7.8.4 | Latest |
+| Page Builder by SiteOrigin | 2.12.2 | 2.36.0 | Latest |
+| SiteOrigin Widgets Bundle | 1.19.0 | 1.74.2 | Latest |
+| TablePress Responsive Tables | 1.1 | 1.1 | Retained; its hooks remain supported by TablePress 3.3.4 |
+| TablePress | 1.13 | 3.3.4 | Latest PHP 7.4-compatible release |
+| Advanced Editor Tools | 5.6.0 | 5.10.1 | Latest |
+| WP Multibyte Patch | 2.9 | 2.9.3 | Latest |
+| WP-PageNavi | 2.93.4 | 2.94.6 | Latest PHP 7.4-compatible tag; 3.0.1 requires PHP 8.2 |
+| WP Posts Carousel | 1.3.7 | 1.3.13 | Latest package |
+| Widget Content Blocks | 2.3.9 | 2.3.13 | Latest PHP 7.4-compatible release |
 
-## Remove after usage verification
-
-All-in-One WP Migration and its commercial multisite extension are migration
-tools, not public-site dependencies. WPForms has no forms or active widget and
-the public contact page uses Contact Form 7. The remaining inactive reset,
-cache, SSL, security, obsolete mail-form, Sakura-only, backup-copy, and utility
-plugins are omitted from the clean staging build to reduce attack surface.
+The production-only SiteGuard and All-in-One WP Migration Multisite Extension
+were not copied to staging. SiteGuard would alter the staging login flow, and
+the migration extension is not a public runtime dependency. Staging instead
+uses the recorded noindex/mail guard; production was not modified.

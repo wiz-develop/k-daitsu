@@ -3,19 +3,19 @@
 This repository records the custom source and deployment notes for the
 K-Daitsu WordPress site.
 
-- `main`: production baseline and approved production releases
-- `test`: staging updates and compatibility work
-- `theme`: site-owned theme source for the branch environment
-- `root-files`: public-root routing files stored under non-active filenames
-- `cms-files`: CMS routing files stored under non-active filenames
-- `mu-plugins`: staging-only operational guards where present
+- `main`: read-only production baseline from `https://www.k-daitsu.co.jp/`
+- `test`: production-data copy deployed to `https://k-daitsu.wiz-services.com/`
+- `theme/rocked`: site-owned customized theme for the branch environment
+- `root-files` and `cms-files`: routing files stored under non-active names
+- `mu-plugins`: staging-only safeguards
 - `plugin-patches`: reviewable patches for retained third-party plugins
-- `docs`: version inventories, QA, release, and rollback records
+- `docs`: inventories, QA evidence, release notes, and rollback procedures
 
 WordPress core, official plugin packages, uploads, databases, credentials,
 `wp-config.php`, logs, caches, and backups are intentionally excluded. The
-production theme video exceeds GitHub's per-file limit and is retained in the
-verified external backup described in `docs/PRODUCTION_BASELINE.md`.
+production theme video exceeds GitHub's per-file limit and remains in the
+verified external backup documented in `docs/PRODUCTION_BASELINE.md`.
 
-The branches intentionally contain different customized themes: production
-`main` records Rocked, while staging `test` records the copied Zerif Lite site.
+`test` preserves the production content, first view, and customized Rocked
+theme. It upgrades WordPress and plugins for PHP 7.4 and adds only the recorded
+compatibility changes. It is not a production deployment commit.
