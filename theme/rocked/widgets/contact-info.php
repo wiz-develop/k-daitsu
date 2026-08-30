@@ -2,7 +2,7 @@
 
 class Rocked_Contact_Info extends WP_Widget {
 
-    function rocked_contact_info() {
+    function __construct() {
 		$widget_ops = array('classname' => 'rocked_contact_info_widget', 'description' => __( 'Display your contact info', 'rocked') );
         parent::__construct(false, $name = __('Rocked: Contact info', 'rocked'), $widget_ops);
 		$this->alt_option_name = 'rocked_contact_info';
@@ -111,4 +111,4 @@ class Rocked_Contact_Info extends WP_Widget {
 		}
 	}
 	
-}	
+}

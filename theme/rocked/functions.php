@@ -384,11 +384,28 @@ require get_template_directory() . '/inc/theme-info.php';
 
 //ここから
 function Include_my_php($params = array()) {
-    extract(shortcode_atts(array(
-        'file' => 'default'
-    ), $params));
+    $params = shortcode_atts(array(
+        'file' => ''
+    ), $params, 'myphp');
+
+    $file = (string) $params['file'];
+    for ($i = 0; $i < 2; $i++) {
+        $file = html_entity_decode($file, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    }
+    $file = trim($file, " \t\n\r\0\x0B'\"");
+
+    $allowed_templates = array('blogslider', 'service', 'ticer', 'top-works');
+    if (!in_array($file, $allowed_templates, true)) {
+        return '';
+    }
+
+    $template_file = get_template_directory() . '/' . $file . '.php';
+    if (!is_file($template_file)) {
+        return '';
+    }
+
     ob_start();
-    include(get_theme_root() . '/' . get_template() . "/$file.php");
+    include $template_file;
     return ob_get_clean();
 }
 
